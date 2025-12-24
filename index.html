@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LESLY ENTREPRISE | Vêtements & Accessoires</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Classic Restaurant & Delivery - Premium Dining in Kigali</title>
     <style>
         * {
             margin: 0;
@@ -13,188 +11,114 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --navy: #1e3a5f;
-            --dark-navy: #152a45;
-            --gold: #d4af37;
-            --light-gold: #f4e5b8;
-            --pink: #e6b8b8;
-            --cream: #faf8f3;
-            --text: #2a2a2a;
-        }
-
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
+            font-family: 'Georgia', serif;
+            color: #2d2d2d;
             line-height: 1.6;
-            background: var(--cream);
-            overflow-x: hidden;
+            background-color: #f8f7f4;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--navy);
+            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.98));
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
             z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 3px solid var(--gold);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+          
         }
 
-        .nav-wrapper {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 3px solid var(--gold);
-            background: var(--dark-navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .logo-initials {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 2px;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            letter-spacing: 3px;
-        }
-
-        .logo-subtitle {
-            font-size: 0.75rem;
-            color: var(--light-gold);
-            letter-spacing: 2px;
+            font-size: 1.2rem;
             font-weight: 300;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            transition: all 0.3s;
+            color: #fff;
+            letter-spacing: 4px;
             position: relative;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
         }
 
-        nav a::before {
+        .logo::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 1px;
+            background: linear-gradient(to right, #8b7355, transparent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d4d4d4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 300;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--gold);
+            height: 1px;
+            background: #8b7355;
             transition: width 0.3s;
         }
 
-        nav a:hover {
-            color: var(--gold);
+        .nav-links a:hover {
+            color: #8b7355;
         }
 
-        nav a:hover::before {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
-        .cart-btn {
-            position: relative;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
             cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-            letter-spacing: 1px;
         }
 
-        .cart-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
-            background: var(--light-gold);
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            transition: 0.3s;
         }
 
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--pink);
-            color: var(--navy);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: bold;
-            border: 2px solid white;
-        }
-
-        /* Hero */
+        /* Hero Section */
         .hero {
-            margin-top: 90px;
-            min-height: 80vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--dark-navy), var(--navy));
-            color: white;
-            text-align: center;
-            padding: 5rem 2rem;
             position: relative;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             overflow: hidden;
         }
 
@@ -205,1266 +129,826 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(230, 184, 184, 0.1) 0%, transparent 50%);
+            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover;
+            opacity: 0.25;
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 0.5rem 1.8rem;
-            border: 2px solid var(--gold);
-            border-radius: 50px;
-            color: var(--gold);
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 2rem;
-            font-weight: 600;
+            text-align: center;
+            color: #fff;
+            padding: 2rem;
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
+            font-size: 4rem;
             margin-bottom: 1rem;
-            color: white;
-            letter-spacing: 3px;
-            line-height: 1.2;
-        }
-
-        .hero h1 .gold-text {
-            color: var(--gold);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--light-gold);
-            margin-bottom: 1.5rem;
             font-weight: 300;
+            letter-spacing: 3px;
         }
 
         .hero p {
-            font-size: 1rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            opacity: 0.9;
-            line-height: 1.8;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: #d4d4d4;
             font-weight: 300;
+            letter-spacing: 1px;
         }
 
-        .hero-buttons {
+        .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
-            align-items: center;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--navy);
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
+        .btn {
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 2px;
-            transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-            border: 2px solid var(--gold);
+            border-radius: 2px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #8b7355;
+            color: #fff;
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
-            background: var(--light-gold);
+            background: #6d5a44;
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
-            display: inline-block;
             background: transparent;
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 2px;
-            transition: all 0.4s;
-            border: 2px solid white;
+            color: #fff;
+            border: 1px solid #fff;
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: var(--navy);
-            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
         }
 
-        /* Decorative Divider */
-        .divider {
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .divider-line {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .divider-line::before,
-        .divider-line::after {
-            content: '';
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-        }
-
-        .divider-icon {
-            color: var(--gold);
-            font-size: 1.5rem;
-        }
-
-        /* Products Section */
-        .products-section {
-            padding: 4rem 0;
-            background: var(--cream);
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-        }
-
-        .section-title h2 {
-            font-size: 3.5rem;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
-
-        .section-title h2 .gold-accent {
-            color: var(--gold);
+            color: #1a1a1a;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .section-subtitle {
-            color: var(--text);
-            font-size: 1.2rem;
-            font-style: italic;
-            font-weight: 300;
-            opacity: 0.8;
-        }
-
-        /* Category Filter */
-        .filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 3rem 0;
-        }
-
-        .filter-btn {
-            padding: 0.8rem 2rem;
-            background: white;
-            border: 2px solid var(--navy);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--navy);
-            transition: all 0.3s;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1.5px;
-        }
-
-        .filter-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.2);
-        }
-
-        .filter-btn.active {
-            background: var(--navy);
-            color: var(--gold);
-            box-shadow: 0 5px 20px rgba(30, 58, 95, 0.4);
-        }
-
-        /* Product Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s;
-            cursor: pointer;
-            border: 3px solid transparent;
-            position: relative;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 3px solid var(--gold);
-            border-radius: 15px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .product-card:hover::before {
-            opacity: 1;
-        }
-
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(30, 58, 95, 0.2);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--gold);
-            color: var(--navy);
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            z-index: 2;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
-            letter-spacing: 1px;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            background: var(--cream);
-            transition: transform 0.5s;
-            display: block;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.1);
-        }
-
-        .product-info {
-            padding: 2rem;
-        }
-
-        .product-category {
-            color: var(--gold);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.7rem;
-        }
-
-        .product-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 0.7rem;
-            font-family: 'Playfair Display', serif;
-            line-height: 1.3;
-        }
-
-        .product-description {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--cream);
-        }
-
-        .product-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--navy);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .add-to-cart {
-            background: var(--navy);
-            color: var(--gold);
-            border: none;
-            padding: 0.9rem 2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .add-to-cart:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(30, 58, 95, 0.5);
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        /* About Section */
-        .about-section {
-            background: var(--navy);
-            color: white;
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--gold), var(--pink), var(--gold));
-        }
-
-        .about-decoration {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20rem;
-            color: var(--gold);
-            opacity: 0.03;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
             text-align: center;
-            position: relative;
-            z-index: 1;
+            color: #6a6a6a;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            font-weight: 300;
         }
 
-        .about-icon {
-            width: 100px;
-            height: 100px;
-            background: var(--gold);
+        /* Delivery Section */
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .delivery-card {
+            background: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+
+        .delivery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .delivery-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: #f5f3f0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 3rem;
-            color: var(--navy);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            font-size: 2rem;
         }
 
-        .about-section h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--gold);
-            font-weight: 800;
+        .delivery-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 400;
         }
 
-        .about-section p {
-            font-size: 1.15rem;
-            line-height: 2;
-            margin-bottom: 1.5rem;
-            opacity: 0.95;
+        .delivery-card p {
+            color: #6a6a6a;
+            line-height: 1.8;
+        }
+
+        .delivery-cta {
+            background: #8b7355;
+            color: #fff;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .delivery-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
             font-weight: 300;
         }
 
-        .about-features {
+        .delivery-cta p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Menu Section */
+        .menu-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #8b7355;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: #fff;
+            padding: 0;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-item:hover .menu-item-image img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 2rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .menu-item h4 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .menu-item .price {
+            color: #8b7355;
+            font-size: 1.1rem;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+
+        .menu-item p {
+            color: #6a6a6a;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Gallery */
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            gap: 1.5rem;
         }
 
-        .feature {
-            padding: 2.5rem 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 2px solid var(--gold);
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        .feature:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
         }
 
-        .feature i {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        .feature h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.7rem;
-            color: var(--gold);
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        .feature p {
-            opacity: 0.8;
-            font-size: 1rem;
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
         }
 
-        /* Footer */
-        footer {
-            background: var(--dark-navy);
-            color: var(--light-gold);
-            padding: 4rem 0 2rem;
-            border-top: 5px solid var(--gold);
-        }
-
-        .footer-grid {
+        /* Reservations */
+        .reservations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             margin-bottom: 3rem;
         }
 
-        .footer-section h3 {
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
+        .reservation-info {
+            text-align: center;
         }
 
-        .footer-section p {
-            margin-bottom: 0.8rem;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        .footer-section a {
-            color: var(--light-gold);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--gold);
-            padding-left: 5px;
-        }
-
-        .footer-section i {
-            color: var(--gold);
-            margin-right: 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-icons a {
+        .reservation-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: #f5f3f0;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: var(--gold);
+            font-size: 2.5rem;
+        }
+
+        .reservation-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 400;
+        }
+
+        .reservation-info p {
+            color: #6a6a6a;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 3rem;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #f5f3f0;
             border-radius: 50%;
-            transition: all 0.3s;
-            color: var(--navy);
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            font-size: 0.9rem;
-            font-weight: 300;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--gold);
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .contact-item p {
+            color: #6a6a6a;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: #8b7355;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: background 0.3s;
+        }
+
+        .social-link:hover {
+            background: #6d5a44;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #8b7355 0%, #6d5a44 100%);
+            height: 100%;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            color: #9a9a9a;
+            margin-top: 1rem;
         }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                padding: 3rem 0;
+                transition: left 0.3s;
             }
-            
-            .product-image {
-                height: 320px;
+
+            .nav-links a {
+                color: #d4d4d4;
             }
-            
-            .section-title h2 {
-                font-size: 3rem;
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
             }
 
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
+            .hero p {
+                font-size: 1.1rem;
             }
 
-            .mobile-menu-btn {
-                display: block;
+            .section-title {
+                font-size: 2rem;
             }
 
-            nav {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--navy);
-                padding: 1rem 0;
-                display: none;
-                border-top: 2px solid var(--gold);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            }
-
-            nav.active {
-                display: block;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-            }
-
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            }
-
-            nav ul li:last-child {
-                border-bottom: none;
-                padding-top: 1rem;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-
-            .hero {
-                margin-top: 80px;
-                min-height: 70vh;
+            section {
                 padding: 4rem 1.5rem;
             }
 
-            .hero-badge {
-                font-size: 0.75rem;
-                padding: 0.4rem 1.5rem;
-                letter-spacing: 2px;
-                margin-bottom: 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-                line-height: 1.2;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 2rem;
-            }
-
-            .hero-badge {
-                font-size: 0.75rem;
-                padding: 0.4rem 1.5rem;
-                letter-spacing: 2px;
-            }
-
-            .hero-buttons {
+            .cta-buttons {
                 flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-                width: 100%;
             }
 
-            .btn-primary, .btn-secondary {
-                padding: 1rem 2rem;
+            .btn {
                 width: 100%;
-                max-width: 300px;
-                display: block;
                 text-align: center;
-            }
-
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-
-            .section-subtitle {
-                font-size: 1rem;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 2rem;
-            }
-
-            .product-image {
-                height: 300px;
-            }
-
-            .filters {
-                gap: 0.7rem;
-                padding: 0 1rem;
-            }
-
-            .filter-btn {
-                padding: 0.7rem 1.3rem;
-                font-size: 0.75rem;
-                letter-spacing: 1px;
-            }
-
-            .about-section {
-                padding: 4rem 0;
-            }
-
-            .about-section h2 {
-                font-size: 2.5rem;
-            }
-
-            .about-section p {
-                font-size: 1rem;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .feature {
-                padding: 2rem 1.5rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            header {
-                padding: 0.8rem 0;
-            }
-
-            .logo-circle {
-                width: 50px;
-                height: 50px;
-            }
-
-            .logo-initials {
-                font-size: 1.2rem;
-            }
-
-            .logo-title {
-                font-size: 1rem;
-                letter-spacing: 2px;
-            }
-
-            .logo-subtitle {
-                font-size: 0.65rem;
-                letter-spacing: 1.5px;
-            }
-
-            .cart-btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.85rem;
-            }
-
-            .cart-count {
-                width: 20px;
-                height: 20px;
-                font-size: 0.7rem;
-                top: -6px;
-                right: -6px;
-            }
-
-            .cart-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.8rem;
-            }
-
-            .cart-count {
-                width: 20px;
-                height: 20px;
-                font-size: 0.7rem;
-                top: -6px;
-                right: -6px;
-            }
-
-            .hero {
-                margin-top: 70px;
-                padding: 3rem 1rem;
-                min-height: 65vh;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .hero-badge {
-                font-size: 0.65rem;
-                padding: 0.35rem 1.2rem;
-                letter-spacing: 1.5px;
-                margin-bottom: 1.2rem;
-            }
-
-            .btn-primary, .btn-secondary {
-                padding: 0.9rem 1.8rem;
-                font-size: 0.9rem;
-                letter-spacing: 1.5px;
-                width: 90%;
-                max-width: 280px;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .section-subtitle {
-                font-size: 0.95rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .product-card {
-                margin: 0 auto;
-                max-width: 400px;
-                width: 100%;
-            }
-
-            .product-image {
-                height: 280px;
-            }
-
-            .product-info {
-                padding: 1.5rem;
-            }
-
-            .product-name {
-                font-size: 1.2rem;
-            }
-
-            .product-price {
-                font-size: 1.6rem;
-            }
-
-            .add-to-cart {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.85rem;
-            }
-
-            .filters {
-                gap: 0.5rem;
-            }
-
-            .filter-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.7rem;
-            }
-
-            .divider {
-                padding: 2rem 0;
-            }
-
-            .divider-line::before,
-            .divider-line::after {
-                width: 50px;
-            }
-
-            .about-section {
-                padding: 3rem 0;
-            }
-
-            .about-icon {
-                width: 80px;
-                height: 80px;
-                font-size: 2.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .about-section h2 {
-                font-size: 2rem;
-            }
-
-            .about-section p {
-                font-size: 0.95rem;
-                line-height: 1.8;
-            }
-
-            .about-features {
-                margin-top: 2.5rem;
-            }
-
-            .feature i {
-                font-size: 2.5rem;
-            }
-
-            .feature h3 {
-                font-size: 1.1rem;
-            }
-
-            .footer-section h3 {
-                font-size: 1.2rem;
-            }
-
-            .social-icons a {
-                width: 40px;
-                height: 40px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .hero-badge {
-                font-size: 0.6rem;
-                padding: 0.3rem 1rem;
-                letter-spacing: 1.2px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.95rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .product-card {
-                max-width: 100%;
-            }
-
-            .product-image {
-                height: 260px;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 95%;
-                padding: 0.85rem 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <div class="logo-circle">
-                        <div class="logo-initials">LE</div>
-                    </div>
-                    <div class="logo-text">
-                        <div class="logo-title">LESLY ENTREPRISE</div>
-                        <div class="logo-subtitle">Vêtements & Accessoires</div>
-                    </div>
-                </div>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <nav id="mainNav">
-                    <ul>
-                        <li><a href="#home">ACCUEIL</a></li>
-                        <li><a href="#products">COLLECTION</a></li>
-                        <li><a href="#about">À PROPOS</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
-                        <li>
-                            <button class="cart-btn">
-                                <i class="fas fa-shopping-bag"></i> PANIER
-                                <span class="cart-count" id="cartCount">0</span>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CLASSIC</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-badge">COLLECTION EXCLUSIVE</div>
-            <h1>Mode <span class="gold-text">Élégante</span></h1>
-            <p class="hero-subtitle">Vêtements & Accessoires de Prestige</p>
-            <p>Découvrez notre sélection raffinée de vêtements et accessoires qui allient élégance intemporelle et sophistication moderne pour toute la famille</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn-primary">DÉCOUVRIR</a>
-                <a href="#about" class="btn-secondary">NOTRE HISTOIRE</a>
+            <h1>CLASSIC</h1>
+            <p>Restaurant & Delivery</p>
+            <p style="font-size: 1rem; margin-bottom: 3rem;">Experience fine dining in the heart of Kigali. Fresh ingredients, exquisite flavors, memorable moments.</p>
+            <div class="cta-buttons">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#delivery" class="btn btn-secondary">Order Delivery</a>
             </div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="divider">
-        <div class="divider-line">
-            <i class="fas fa-gem divider-icon"></i>
+    <!-- Delivery Section -->
+    <section id="delivery">
+        <h2 class="section-title">Delivery Service</h2>
+        <p class="section-subtitle">Enjoy our premium cuisine in the comfort of your home</p>
+        
+        <div class="delivery-grid">
+            <div class="delivery-card">
+                <div class="delivery-icon">🚚</div>
+                <h3>Fast Delivery</h3>
+                <p>30-45 minutes delivery time within Kigali. Your meal arrives fresh and hot, just as it left our kitchen.</p>
+            </div>
+            <div class="delivery-card">
+                <div class="delivery-icon">📱</div>
+                <h3>Easy Ordering</h3>
+                <p>Simple ordering via phone or WhatsApp. Our team is ready to take your order and answer any questions.</p>
+            </div>
+            <div class="delivery-card">
+                <div class="delivery-icon">🍽️</div>
+                <h3>Premium Quality</h3>
+                <p>Same restaurant quality delivered to your door. We maintain our high standards with every delivery.</p>
+            </div>
         </div>
-    </div>
 
-    <!-- Products -->
-    <section class="products-section" id="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Notre <span class="gold-accent">Collection</span></h2>
-                <p class="section-subtitle">Élégance & Raffinement</p>
+        <div class="delivery-cta">
+            <h3>Order Your Meal Now</h3>
+            <p>Available Monday - Sunday, 11:00 AM - 10:00 PM</p>
+            <div class="cta-buttons">
+                <a href="tel:+250788123456" class="btn btn-secondary">📞 Call to Order</a>
+                <a href="https://wa.me/250788123456" class="btn btn-secondary">💬 WhatsApp Order</a>
             </div>
-
-            <!-- Filters -->
-            <div class="filters" id="filters">
-                <button class="filter-btn active" data-category="all">Tout Voir</button>
-                <button class="filter-btn" data-category="Vêtements Enfants">Enfants</button>
-                <button class="filter-btn" data-category="Tenues Famille">Famille</button>
-                <button class="filter-btn" data-category="Tissus & Textiles">Tissus</button>
-                <button class="filter-btn" data-category="Beauté & Cosmétiques">Beauté</button>
-                <button class="filter-btn" data-category="Tenues Traditionnelles Hommes">Hommes</button>
-                <button class="filter-btn" data-category="Chaussures">Chaussures</button>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="products-grid" id="productsGrid"></div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="divider">
-        <div class="divider-line">
-            <i class="fas fa-crown divider-icon"></i>
-        </div>
-    </div>
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="section-title">Our Menu</h2>
+        <p class="section-subtitle">Crafted with passion, served with excellence</p>
 
-    <!-- About -->
-    <section class="about-section" id="about">
-        <div class="about-decoration">LE</div>
-        <div class="container">
-            <div class="about-content">
-                <div class="about-icon">
-                    <i class="fas fa-star"></i>
+        <div class="menu-category">
+            <h3 class="category-title">Starters</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=600&q=80" alt="Truffle Bruschetta">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Truffle Bruschetta</h4>
+                            <span class="price">8,500 RWF</span>
+                        </div>
+                        <p>Fresh tomatoes, basil, and garlic on toasted ciabatta with a drizzle of truffle oil</p>
+                    </div>
                 </div>
-                <h2>Notre Excellence</h2>
-                <p>LESLY ENTREPRISE incarne l'élégance et le raffinement dans chaque pièce. Notre mission est de vous offrir des vêtements et accessoires de qualité exceptionnelle qui reflètent votre style unique.</p>
-                <p>Depuis notre création, nous nous engageons à offrir une expérience d'achat luxueuse et personnalisée, où chaque client trouve la pièce parfaite pour exprimer sa personnalité.</p>
-                
-                <div class="about-features">
-                    <div class="feature">
-                        <i class="fas fa-gem"></i>
-                        <h3>Qualité Premium</h3>
-                        <p>Sélection rigoureuse des meilleurs produits</p>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80" alt="Crispy Calamari">
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-heart"></i>
-                        <h3>Service Personnalisé</h3>
-                        <p>Accompagnement sur mesure</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Crispy Calamari</h4>
+                            <span class="price">12,000 RWF</span>
+                        </div>
+                        <p>Tender squid rings lightly fried, served with lemon aioli and fresh herbs</p>
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-shipping-fast"></i>
-                        <h3>Livraison Rapide</h3>
-                        <p>Partout au Cameroun</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&q=80" alt="Caesar Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Caesar Salad</h4>
+                            <span class="price">9,500 RWF</span>
+                        </div>
+                        <p>Crisp romaine lettuce, parmesan shavings, and house-made croutons</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="menu-category">
+            <h3 class="category-title">Main Courses</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&q=80" alt="Grilled Salmon">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Grilled Salmon</h4>
+                            <span class="price">22,000 RWF</span>
+                        </div>
+                        <p>Atlantic salmon grilled to perfection with seasonal vegetables and lemon butter</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Beef Tenderloin">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Beef Tenderloin</h4>
+                            <span class="price">28,000 RWF</span>
+                        </div>
+                        <p>Premium cut served with truffle mashed potatoes and red wine reduction</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1476124369491-c0e0a0a94e5b?w=600&q=80" alt="Mushroom Risotto">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Mushroom Risotto</h4>
+                            <span class="price">16,000 RWF</span>
+                        </div>
+                        <p>Creamy arborio rice with wild mushrooms and aged parmesan</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&q=80" alt="Chicken Supreme">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Chicken Supreme</h4>
+                            <span class="price">18,000 RWF</span>
+                        </div>
+                        <p>Pan-seared chicken breast with herb jus and roasted baby potatoes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h3 class="category-title">Desserts</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=600&q=80" alt="Chocolate Fondant">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Chocolate Fondant</h4>
+                            <span class="price">7,500 RWF</span>
+                        </div>
+                        <p>Warm chocolate cake with a molten center, served with vanilla ice cream</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80" alt="Tiramisu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Tiramisu</h4>
+                            <span class="price">6,500 RWF</span>
+                        </div>
+                        <p>Classic Italian dessert with espresso-soaked ladyfingers and mascarpone</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80" alt="Crème Brûlée">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>Crème Brûlée</h4>
+                            <span class="price">7,000 RWF</span>
+                        </div>
+                        <p>Silky vanilla custard with a perfectly caramelized sugar crust</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">A visual journey through our culinary creations</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Fine dining dish">
+                <div class="gallery-overlay">Signature Dishes</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Gourmet food">
+                <div class="gallery-overlay">Chef's Specials</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Restaurant interior">
+                <div class="gallery-overlay">Dining Ambiance</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80" alt="Fresh ingredients">
+                <div class="gallery-overlay">Fresh Ingredients</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Breakfast">
+                <div class="gallery-overlay">Breakfast Menu</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Pizza">
+                <div class="gallery-overlay">Wood-Fired Pizzas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations">
+        <h2 class="section-title">Reservations</h2>
+        <p class="section-subtitle">Book your table for an unforgettable dining experience</p>
+        
+        <div class="reservations-grid">
+            <div class="reservation-info">
+                <div class="reservation-icon">🕐</div>
+                <h3>Opening Hours</h3>
+                <p>Monday - Sunday<br>11:00 AM - 11:00 PM</p>
+            </div>
+            <div class="reservation-info">
+                <div class="reservation-icon">👥</div>
+                <h3>Group Dining</h3>
+                <p>Private & group events<br>Up to 50 guests</p>
+            </div>
+            <div class="reservation-info">
+                <div class="reservation-icon">📞</div>
+                <h3>Book Now</h3>
+                <p>Call or WhatsApp<br>+250 788 123 456</p>
+            </div>
+        </div>
+
+        <div class="delivery-cta">
+            <h3>Ready to Dine With Us?</h3>
+            <p>Reserve your table today and experience culinary excellence</p>
+            <div class="cta-buttons">
+                <a href="tel:+250788123456" class="btn btn-secondary">Call to Reserve</a>
+                <a href="https://wa.me/250788123456" class="btn btn-secondary">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Visit Us</h2>
+        <p class="section-subtitle">We're located in the heart of Kigali</p>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>160 KK 31 Ave, Kigali<br>Kigali, Rwanda</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h4>Phone & WhatsApp</h4>
+                        <p>+250 783 726 151</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
+            </div>
+            
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>LESLY ENTREPRISE</h3>
-                    <p>Votre destination pour l'élégance et le raffinement. Vêtements et accessoires de qualité pour toute la famille.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Douala, Cameroun</p>
-                    <p><i class="fas fa-phone"></i> +237 6XX XX XX XX</p>
-                    <p><i class="fas fa-envelope"></i> contact@leslyentreprise.com</p>
-                    <p><i class="fas fa-clock"></i> Lun - Sam: 9h - 19h</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Liens Rapides</h3>
-                    <p><a href="#home">Accueil</a></p>
-                    <p><a href="#products">Collection</a></p>
-                    <p><a href="#about">À propos</a></p>
-                    <p><a href="#contact">Contact</a></p>
-                </div>
-            </div>
-            <div class="copyright">
-                © 2023 LESLY ENTREPRISE - Vêtements & Accessoires | Tous droits réservés
-            </div>
-        </div>
+    <footer>
+        <h3>CLASSIC</h3>
+        <p>Restaurant & Delivery</p>
+        <p style="margin-top: 2rem;">© 2025 Classic Restaurant. All rights reserved.</p>
     </footer>
 
     <script>
-        const products = [
-            {
-                id: 1,
-                name: "Robe Floral Rouge pour Fille",
-                price: "$18",
-                category: "Vêtements Enfants",
-                description: "Robe florale rouge vive pour filles",
-                image: "images/1.jpg",
-                badge: "NOUVEAU"
-            },
-            {
-                id: 2,
-                name: "Tenue Matching Mère-Fille",
-                price: "$45",
-                category: "Tenues Famille",
-                description: "Élégante tenue rouge en Ankara assortie",
-                image: "images/2.jpg",
-                badge: "EXCLUSIF"
-            },
-            {
-                id: 3,
-                name: "Rouleaux de Tissu Assortis",
-                price: "$12",
-                category: "Tissus & Textiles",
-                description: "Rouleaux de tissu vibrants",
-                image: "images/3.jpg"
-            },
-            {
-                id: 4,
-                name: "Lot de Tissu à Motifs Verts",
-                price: "$15",
-                category: "Tissus & Textiles",
-                description: "Tissu de haute qualité à motifs verts",
-                image: "images/4.jpg"
-            },
-            {
-                id: 5,
-                name: "Set de Brillant à Lèvres",
-                price: "$10",
-                category: "Beauté & Cosmétiques",
-                description: "Collection de brillants à lèvres",
-                image: "images/5.jpg",
-                badge: "TENDANCE"
-            },
-            {
-                id: 6,
-                name: "Pack de Couleurs de Tissu",
-                price: "$20",
-                category: "Tissus & Textiles",
-                description: "Couleurs de tissu premium mélangées",
-                image: "images/6.jpg"
-            },
-            {
-                id: 7,
-                name: "Tenue Traditionnelle Dorée",
-                price: "$55",
-                category: "Tenues Traditionnelles Hommes",
-                description: "Élégante tenue traditionnelle dorée",
-                image: "images/7.jpg",
-                badge: "PRESTIGE"
-            },
-            {
-                id: 8,
-                name: "Tenue Traditionnelle Bleu Ciel",
-                price: "$50",
-                category: "Tenues Traditionnelles Hommes",
-                description: "Tenue traditionnelle bleu ciel stylée",
-                image: "images/8.jpg"
-            },
-            {
-                id: 9,
-                name: "Costume Traditionnel Gris",
-                price: "$60",
-                category: "Tenues Traditionnelles Hommes",
-                description: "Costume traditionnel gris premium",
-                image: "images/9.jpg",
-                badge: "LUXE"
-            },
-            {
-                id: 10,
-                name: "Tenue Traditionnelle Vert Foncé",
-                price: "$48",
-                category: "Tenues Traditionnelles Hommes",
-                description: "Tenue traditionnelle vert foncé",
-                image: "images/10.jpg"
-            },
-            {
-                id: 11,
-                name: "Haut Traditionnel Mauve",
-                price: "$40",
-                category: "Tenues Traditionnelles Hommes",
-                description: "Haut traditionnel mauve moderne",
-                image: "images/11.jpg"
-            },
-            {
-                id: 12,
-                name: "Sandales en Cuir Luxe",
-                price: "$35",
-                category: "Chaussures",
-                description: "Sandales en cuir faites à la main",
-                image: "images/12.jpg",
-                badge: "ÉLÉGANT"
-            }
-        ];
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
 
-        let cart = [];
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-        function displayProducts(productsToShow = products) {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = '';
-
-            productsToShow.forEach(product => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                    <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='https://via.placeholder.com/350x350/1e3a5f/d4af37?text=${encodeURIComponent(product.name)}'">
-                    <div class="product-info">
-                        <div class="product-category">${product.category}</div>
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-description">${product.description}</div>
-                        <div class="product-footer">
-                            <div class="product-price">${product.price}</div>
-                            <button class="add-to-cart" onclick="addToCart(${product.id})">
-                                AJOUTER
-                            </button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            cart.push(product);
-            updateCartCount();
-            
-            const btn = event.target;
-            const originalText = btn.textContent;
-            btn.textContent = '✓ AJOUTÉ';
-            btn.style.background = 'var(--gold)';
-            btn.style.color = 'var(--navy)';
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.background = '';
-                btn.style.color = '';
-            }, 1500);
-        }
-
-        function updateCartCount() {
-            document.getElementById('cartCount').textContent = cart.length;
-        }
-
-        function filterProducts(category) {
-            const filtered = category === 'all' 
-                ? products 
-                : products.filter(p => p.category === category);
-            displayProducts(filtered);
-        }
-
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                filterProducts(this.dataset.category);
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
             });
         });
 
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    mainNav.classList.remove('active');
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
 
-        displayProducts();
-        updateCartCount();
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.12)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+        });
     </script>
 </body>
 </html>
