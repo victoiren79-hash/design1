@@ -116,17 +116,21 @@
             transition: 0.3s;
         }
 
-        /* Hero Section - Updated to fill gaps */
+        /* Hero Section - UPDATED TO BE FULL WIDTH */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            margin-top: 20px;
+            margin-top: 0;
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             overflow: hidden;
-            padding: 0; /* Remove padding */
+            width: 100vw; /* Full viewport width */
+            margin-left: calc(-50vw + 50%); /* Center alignment fix */
+            left: 0;
+            right: 0;
+            padding: 0;
         }
 
         .hero::before {
@@ -145,9 +149,9 @@
             text-align: center;
             color: #fff;
             padding: 2rem;
-            max-width: 1200px; /* Match the container width */
+            max-width: 1200px;
             width: 100%;
-            margin: 0 auto; /* Center the content */
+            margin: 0 auto;
         }
 
         .hero h1 {
