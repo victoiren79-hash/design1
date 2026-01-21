@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Restaurant & Delivery - 24-Hour Premium Dining in Kigali</title>
-    <!-- Google Fonts -->
+    <title>Classic Restaurant | 24/7 Fine Dining & Delivery - Kigali</title>
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ALL CSS STYLES REMAIN EXACTLY THE SAME AS BEFORE */
         * {
             margin: 0;
             padding: 0;
@@ -18,10 +18,11 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #2d2d2d;
+            font-family: 'Montserrat', sans-serif;
+            color: #2c2c2c;
             line-height: 1.6;
-            background-color: #f8f7f4;
+            background-color: #fefefe;
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -29,12 +30,13 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.98));
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
             z-index: 1000;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -47,41 +49,38 @@
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #fff;
-            letter-spacing: 3px;
-            position: relative;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50%;
-            height: 1px;
-            background: linear-gradient(to right, #8b7355, transparent);
+        .logo-icon {
+            color: #8b7355;
+            font-size: 1.5rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            font-family: 'Inter', sans-serif;
-            color: #d4d4d4;
+            font-family: 'Montserrat', sans-serif;
+            color: #444;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             transition: all 0.3s;
-            letter-spacing: 1.5px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            font-weight: 400;
+            font-weight: 500;
             position: relative;
-            padding-bottom: 5px;
+            padding: 0.5rem 0;
         }
 
         .nav-links a::after {
@@ -90,7 +89,7 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
+            height: 2px;
             background: #8b7355;
             transition: width 0.3s;
         }
@@ -106,40 +105,32 @@
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
             cursor: pointer;
+            background: transparent;
+            border: none;
         }
 
         .menu-toggle span {
             width: 25px;
             height: 2px;
-            background: #fff;
+            background: #1a1a1a;
             transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
+            min-height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
             overflow: hidden;
             width: 100%;
             margin: 0;
             padding: 0;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover;
-            opacity: 0.25;
         }
 
         .hero-content {
@@ -147,57 +138,63 @@
             text-align: center;
             color: #fff;
             padding: 2rem;
-            max-width: 1200px;
+            max-width: 800px;
             width: 100%;
             margin: 0 auto;
             z-index: 2;
         }
 
         .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
             margin-bottom: 1rem;
-            font-weight: 400;
-            letter-spacing: 4px;
+            font-weight: 700;
+            letter-spacing: 1px;
             line-height: 1.1;
         }
 
-        .hero p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
             color: #d4d4d4;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .hero-content p:last-of-type {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
             max-width: 600px;
-            margin: 0 auto 3rem;
-            font-weight: 400;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
             opacity: 0.9;
+            line-height: 1.8;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            font-family: 'Inter', sans-serif;
-            padding: 1rem 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0.9rem 2rem;
             text-decoration: none;
-            border-radius: 2px;
+            border-radius: 3px;
             font-size: 0.95rem;
             transition: all 0.3s;
             letter-spacing: 1px;
             cursor: pointer;
             border: none;
-            font-weight: 500;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .btn-primary {
@@ -206,152 +203,167 @@
         }
 
         .btn-primary:hover {
-            background: #6d5a44;
+            background: #735c40;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
             color: #fff;
-            border: 1px solid #fff;
+            border: 2px solid #fff;
         }
 
         .btn-secondary:hover {
             background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
         }
 
-        /* Section Styles */
+        /* Section Styles - Reduced Spacing */
         section {
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
             color: #1a1a1a;
-            font-weight: 500;
-            letter-spacing: 2px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .section-subtitle {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             text-align: center;
-            color: #6a6a6a;
-            margin-bottom: 4rem;
-            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1rem;
             font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Delivery Section */
         .delivery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .delivery-card {
             background: #fff;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
-            transition: transform 0.3s;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid #8b7355;
         }
 
         .delivery-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .delivery-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             margin: 0 auto 1.5rem;
-            background: #f5f3f0;
+            background: #f8f6f3;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
+            color: #8b7355;
         }
 
         .delivery-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: #1a1a1a;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .delivery-card p {
-            font-family: 'Inter', sans-serif;
-            color: #6a6a6a;
-            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            color: #666;
+            line-height: 1.7;
             font-weight: 400;
+            font-size: 0.95rem;
         }
 
         .delivery-cta {
-            background: #8b7355;
+            background: linear-gradient(135deg, #8b7355 0%, #6d5a44 100%);
             color: #fff;
             padding: 3rem;
             text-align: center;
-            margin-top: 3rem;
+            border-radius: 5px;
+            margin-top: 2rem;
         }
 
         .delivery-cta h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            font-weight: 400;
+            font-weight: 600;
         }
 
         .delivery-cta p {
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
             font-weight: 400;
+            font-size: 1.05rem;
         }
 
         /* Menu Section */
         .menu-category {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .category-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: #8b7355;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 2px solid #f0f0f0;
             padding-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .menu-items {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .menu-item {
             background: #fff;
             padding: 0;
-            box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+            border-radius: 5px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .menu-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .menu-item-image {
             width: 100%;
-            height: 220px;
+            height: 200px;
             overflow: hidden;
         }
 
@@ -363,11 +375,14 @@
         }
 
         .menu-item:hover .menu-item-image img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .menu-item-content {
-            padding: 2rem;
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .menu-item-header {
@@ -378,121 +393,43 @@
         }
 
         .menu-item h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             color: #1a1a1a;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .menu-item .price {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: #8b7355;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
             white-space: nowrap;
             margin-left: 1rem;
         }
 
         .menu-item p {
-            font-family: 'Inter', sans-serif;
-            color: #6a6a6a;
-            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #666;
+            font-size: 0.9rem;
             line-height: 1.7;
             font-weight: 400;
+            margin-top: auto;
         }
 
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        /* Reservations */
-        .reservations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .reservation-info {
-            text-align: center;
-        }
-
-        .reservation-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: #f5f3f0;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-
-        .reservation-info h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-            font-weight: 500;
-        }
-
-        .reservation-info p {
-            font-family: 'Inter', sans-serif;
-            color: #6a6a6a;
-            font-weight: 400;
-        }
-
-        /* Contact */
-        .contact-grid {
+        /* Contact Form Section */
+        .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
+            margin-top: 2rem;
         }
 
         .contact-info {
             background: #fff;
-            padding: 3rem;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+            padding: 2.5rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
         .contact-item {
@@ -504,40 +441,100 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: #f5f3f0;
+            background: #f8f6f3;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            color: #8b7355;
             margin-right: 1.5rem;
             flex-shrink: 0;
         }
 
         .contact-item h4 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: #1a1a1a;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .contact-item p {
-            font-family: 'Inter', sans-serif;
-            color: #6a6a6a;
+            font-family: 'Montserrat', sans-serif;
+            color: #666;
             font-size: 0.95rem;
             font-weight: 400;
         }
 
+        .contact-form {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+            color: #444;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #8b7355;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background: #8b7355;
+            color: #fff;
+            border: none;
+            padding: 0.9rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .form-submit:hover {
+            background: #735c40;
+            transform: translateY(-2px);
+        }
+
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-top: 2rem;
         }
 
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: #8b7355;
             border-radius: 50%;
             display: flex;
@@ -545,68 +542,130 @@
             justify-content: center;
             color: #fff;
             text-decoration: none;
-            font-size: 1.3rem;
-            transition: background 0.3s;
-            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.3s;
         }
 
         .social-link:hover {
-            background: #6d5a44;
+            background: #735c40;
+            transform: translateY(-3px);
         }
 
-        .map-placeholder {
-            background: linear-gradient(135deg, #8b7355 0%, #6d5a44 100%);
-            height: 100%;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 3rem;
-            font-family: 'Cormorant Garamond', serif;
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .partner-card {
+            background: #fff;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #8b7355;
+        }
+
+        .partner-icon {
+            font-size: 2.5rem;
+            color: #8b7355;
+            margin-bottom: 1rem;
+        }
+
+        .partner-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .partner-card p {
+            font-family: 'Montserrat', sans-serif;
+            color: #666;
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 0.9rem;
         }
 
         /* Footer */
         footer {
             background: #1a1a1a;
             color: #fff;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .footer-column p, .footer-column a {
+            font-family: 'Montserrat', sans-serif;
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #8b7355;
+        }
+
+        .copyright {
             text-align: center;
-            padding: 3rem 2rem;
-        }
-
-        footer h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-        }
-
-        footer p {
-            font-family: 'Inter', sans-serif;
-            color: #9a9a9a;
-            margin-top: 1rem;
-            font-weight: 400;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+            font-family: 'Montserrat', sans-serif;
+            color: #888;
+            font-size: 0.85rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 90px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 90px);
-                background: rgba(26, 26, 26, 0.98);
-                backdrop-filter: blur(20px);
+                height: calc(100vh - 70px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
                 flex-direction: column;
                 align-items: center;
-                padding: 3rem 0;
+                padding: 2rem 0;
                 transition: left 0.3s;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             }
 
             .nav-links a {
-                color: #d4d4d4;
+                color: #444;
+                font-size: 1rem;
             }
 
             .nav-links.active {
@@ -618,43 +677,56 @@
             }
 
             .hero h1 {
-                font-size: 3rem;
-                letter-spacing: 3px;
+                font-size: 2.8rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
             }
 
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             section {
-                padding: 4rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
 
             .cta-buttons {
                 flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
             }
 
             .btn {
                 width: 100%;
-                text-align: center;
             }
             
             .hero-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .delivery-cta {
                 padding: 2rem 1.5rem;
             }
         }
         
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
-            .hero-content p:last-of-type {
+            .hero-tagline {
                 font-size: 0.95rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -663,65 +735,81 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">CLASSIC</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#delivery">24/7 Delivery</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#partners">Partners</a></li>
-                <li><a href="#reservations">Reservations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="logo">
+                <i class="fas fa-utensils logo-icon"></i>
+                CLASSIC
             </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#delivery"><i class="fas fa-truck"></i> 24/7 Delivery</a></li>
+                <li><a href="#menu"><i class="fas fa-utensils"></i> Menu</a></li>
+                <li><a href="#partners"><i class="fas fa-handshake"></i> Partners</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero" id="home">
         <div class="hero-content">
-            <h1>CLASSIC</h1>
-            <p>Restaurant & 24-Hour Delivery</p>
-            <p>Kigali's premier 24-hour fine dining experience. Enjoy exquisite flavors with round-the-clock dine-in and no-contact delivery. Your culinary destination never closes.</p>
+            <h1>Classic Restaurant</h1>
+            <p class="hero-subtitle">24/7 Fine Dining & Delivery</p>
+            <p class="hero-tagline">Kigali's premier culinary destination offering round-the-clock gourmet experiences. Dine in elegance or enjoy premium no-contact delivery anytime.</p>
             <div class="cta-buttons">
-                <a href="#menu" class="btn btn-primary">View Full Menu</a>
-                <a href="#delivery" class="btn btn-secondary">Order Now 24/7</a>
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i> View Menu
+                </a>
+                <a href="#delivery" class="btn btn-secondary">
+                    <i class="fas fa-clock"></i> Order 24/7
+                </a>
             </div>
         </div>
     </div>
 
     <!-- Delivery Section -->
     <section id="delivery">
-        <h2 class="section-title">24-Hour Delivery Service</h2>
-        <p class="section-subtitle">Premium cuisine delivered anytime, day or night</p>
+        <h2 class="section-title">24/7 Delivery Service</h2>
+        <p class="section-subtitle">Premium cuisine delivered anytime, with real-time tracking and contactless delivery options</p>
         
         <div class="delivery-grid">
             <div class="delivery-card">
-                <div class="delivery-icon">⏰</div>
-                <h3>24/7 Availability</h3>
-                <p>Round-the-clock delivery service. Satisfy your cravings anytime - breakfast, lunch, dinner, or late-night dining.</p>
+                <div class="delivery-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Always Available</h3>
+                <p>Round-the-clock service for breakfast, lunch, dinner, and late-night cravings. We never close.</p>
             </div>
             <div class="delivery-card">
-                <div class="delivery-icon">📍</div>
-                <h3>Real-Time Tracking</h3>
-                <p>Track your order from our kitchen to your doorstep. Live updates and estimated delivery times for complete peace of mind.</p>
+                <div class="delivery-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Live Tracking</h3>
+                <p>Track your order in real-time from our kitchen to your doorstep. Complete transparency.</p>
             </div>
             <div class="delivery-card">
-                <div class="delivery-icon">🛡️</div>
-                <h3>No-Contact Delivery</h3>
-                <p>Safety-first service with optional no-contact delivery. Your meal arrives hot, fresh, and securely packaged.</p>
+                <div class="delivery-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Contactless Delivery</h3>
+                <p>Optional no-contact delivery with secure packaging. Your safety is our priority.</p>
             </div>
         </div>
 
         <div class="delivery-cta">
-            <h3>Order Anytime, Day or Night</h3>
-            <p>Available 24 hours daily • Live order tracking • Direct delivery or through VubaVuba</p>
+            <h3>Ready to Order?</h3>
+            <p>Available 24/7 through direct ordering or delivery platforms</p>
             <div class="cta-buttons">
-                <a href="tel:+250783726151" class="btn btn-secondary">📞 Call to Order +250 783 726 151</a>
-                <a href="https://wa.me/250783726151" class="btn btn-secondary">💬 WhatsApp Order</a>
+                <a href="tel:+250783726151" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> +250 783 726 151
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-comment"></i> Online Order
+                </a>
             </div>
         </div>
     </section>
@@ -729,7 +817,7 @@
     <!-- Menu Section -->
     <section id="menu">
         <h2 class="section-title">Signature Menu</h2>
-        <p class="section-subtitle">Culinary excellence available 24 hours daily</p>
+        <p class="section-subtitle">Culinary excellence crafted by our executive chefs, available 24/7</p>
 
         <div class="menu-category">
             <h3 class="category-title">Chef's Specialties</h3>
@@ -760,24 +848,6 @@
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&q=80" alt="Caesar Salad">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Caesar Salad</h4>
-                            <span class="price">9,500 RWF</span>
-                        </div>
-                        <p>Crisp romaine lettuce, parmesan shavings, and house-made croutons</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-category">
-            <h3 class="category-title">Main Courses</h3>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="menu-item-image">
                         <img src="https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&q=80" alt="Grilled Salmon">
                     </div>
                     <div class="menu-item-content">
@@ -786,42 +856,6 @@
                             <span class="price">22,000 RWF</span>
                         </div>
                         <p>Atlantic salmon grilled to perfection with seasonal vegetables and lemon butter</p>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Beef Tenderloin">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Beef Tenderloin</h4>
-                            <span class="price">28,000 RWF</span>
-                        </div>
-                        <p>Premium cut served with truffle mashed potatoes and red wine reduction</p>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1476124369491-c0e0a0a94e5b?w=600&q=80" alt="Mushroom Risotto">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Mushroom Risotto</h4>
-                            <span class="price">16,000 RWF</span>
-                        </div>
-                        <p>Creamy arborio rice with wild mushrooms and aged parmesan</p>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&q=80" alt="Chicken Supreme">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Chicken Supreme</h4>
-                            <span class="price">18,000 RWF</span>
-                        </div>
-                        <p>Pan-seared chicken breast with herb jus and roasted baby potatoes</p>
                     </div>
                 </div>
             </div>
@@ -833,115 +867,154 @@
         <h2 class="section-title">Delivery Partners</h2>
         <p class="section-subtitle">Available on multiple platforms for your convenience</p>
         
-        <div class="delivery-grid">
-            <div class="delivery-card">
-                <div class="delivery-icon">📱</div>
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="partner-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
                 <h3>Direct Ordering</h3>
-                <p>Order directly through our phone, WhatsApp, or website for personalized service and exclusive menu items.</p>
+                <p>Order directly through phone or WhatsApp for personalized service and exclusive menu items.</p>
             </div>
-            <div class="delivery-card">
-                <div class="delivery-icon">🚀</div>
+            <div class="partner-card">
+                <div class="partner-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
                 <h3>VubaVuba</h3>
-                <p>Find us on VubaVuba along with other local restaurants. Enjoy seamless ordering through Rwanda's popular delivery platform.</p>
+                <p>Find us on Rwanda's popular delivery platform along with other premium local restaurants.</p>
             </div>
-            <div class="delivery-card">
-                <div class="delivery-icon">🏆</div>
-                <h3>Premium Experience</h3>
-                <p>Whether ordering directly or through partners, receive the same restaurant-quality dining experience at your doorstep.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reservations Section -->
-    <section id="reservations">
-        <h2 class="section-title">Dine With Us</h2>
-        <p class="section-subtitle">24-hour fine dining experience in Kigali</p>
-        
-        <div class="reservations-grid">
-            <div class="reservation-info">
-                <div class="reservation-icon">⏰</div>
-                <h3>Open 24 Hours</h3>
-                <p>Daily 24/7 Service<br>Dine-in & Takeaway</p>
-            </div>
-            <div class="reservation-info">
-                <div class="reservation-icon">👨‍🍳</div>
-                <h3>Chef's Table</h3>
-                <p>Private dining<br>Culinary experiences</p>
-            </div>
-            <div class="reservation-info">
-                <div class="reservation-icon">📞</div>
-                <h3>Reservations</h3>
-                <p>Call or WhatsApp<br>+250 783 726 151</p>
-            </div>
-        </div>
-
-        <div class="delivery-cta">
-            <h3>Experience 24-Hour Fine Dining</h3>
-            <p>Book your table for breakfast, lunch, dinner, or late-night dining. Our doors never close.</p>
-            <div class="cta-buttons">
-                <a href="tel:+250783726151" class="btn btn-secondary">📞 Call to Reserve</a>
-                <a href="https://wa.me/250783726151" class="btn btn-secondary">💬 WhatsApp Reservation</a>
+            <div class="partner-card">
+                <div class="partner-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Website Orders</h3>
+                <p>Place orders directly through our website with live tracking and order management.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with Form -->
     <section id="contact">
-        <h2 class="section-title">Visit Our Location</h2>
-        <p class="section-subtitle">Kigali's premier 24-hour culinary destination</p>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Get in touch for reservations, catering, or delivery inquiries</p>
         
-        <div class="contact-grid">
+        <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">📍</div>
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
                     <div>
-                        <h4>Address</h4>
+                        <h4>Location</h4>
                         <p>160 KK 31 Avenue<br>Kigali, Rwanda</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
                     <div>
-                        <h4>Hours</h4>
-                        <p>Open 24 Hours Daily<br>Dine-in & Delivery</p>
+                        <h4>Operating Hours</h4>
+                        <p>Open 24/7 Daily<br>Dine-in & Delivery</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
                     <div>
-                        <h4>Contact</h4>
+                        <h4>Phone & WhatsApp</h4>
                         <p>+250 783 726 151<br>Available 24/7</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">🌐</div>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <div>
-                        <h4>Online</h4>
-                        <p>Official Website<br>Also on VubaVuba</p>
+                        <h4>Email</h4>
+                        <p>info@classicrestaurant.rw<br>reservations@classicrestaurant.rw</p>
                     </div>
                 </div>
                 <div class="social-links">
-                    <a href="#" class="social-link">f</a>
-                    <a href="#" class="social-link">📷</a>
-                    <a href="#" class="social-link">📱</a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
-            <div class="map-placeholder">
-                24/7
+            
+            <div class="contact-form">
+                <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; color: #1a1a1a;">Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="+250 XXX XXX XXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="">Select a subject</option>
+                            <option value="reservation">Table Reservation</option>
+                            <option value="delivery">Delivery Inquiry</option>
+                            <option value="catering">Catering Service</option>
+                            <option value="feedback">Feedback & Suggestions</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" class="form-control" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <h3>CLASSIC RESTAURANT & DELIVERY</h3>
-        <p>Kigali's 24-Hour Fine Dining Experience</p>
-        <p style="margin-top: 2rem; font-size: 0.9rem;">
-            <strong>Featured Restaurant:</strong> Classic Restaurant and Delivery • 160 KK 31 Ave, Kigali<br>
-            Open 24 hours • Dine-in & No-contact Delivery • +250 783 726 151<br>
-            Also available on VubaVuba and other local delivery platforms
-        </p>
-        <p style="margin-top: 1rem;">© 2025 Classic Restaurant. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Classic Restaurant</h4>
+                <p>Kigali's premier 24-hour fine dining destination offering gourmet cuisine with round-the-clock delivery service.</p>
+                <p><i class="fas fa-star" style="color: #8b7355; margin-right: 5px;"></i> Featured Restaurant in Kigali</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="#menu"><i class="fas fa-chevron-right"></i> Menu</a>
+                <a href="#delivery"><i class="fas fa-chevron-right"></i> 24/7 Delivery</a>
+                <a href="#partners"><i class="fas fa-chevron-right"></i> Delivery Partners</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 160 KK 31 Ave, Kigali</p>
+                <p><i class="fas fa-phone-alt"></i> +250 783 726 151</p>
+                <p><i class="fas fa-clock"></i> Open 24 Hours Daily</p>
+                <p><i class="fas fa-truck"></i> Also on VubaVuba</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Classic Restaurant & Delivery. All rights reserved. | Premium 24/7 Dining Experience
+        </div>
     </footer>
 
     <script>
@@ -951,12 +1024,27 @@
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            // Animate hamburger to X
+            const spans = menuToggle.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
         });
 
         // Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                menuToggle.querySelectorAll('span').forEach(span => {
+                    span.style.transform = 'none';
+                    span.style.opacity = '1';
+                });
             });
         });
 
@@ -974,19 +1062,57 @@
             });
         });
 
-        // Add scroll effect to navigation
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.12)';
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.7rem 0';
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
             } else {
+                nav.style.padding = '1rem 0';
                 nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
             }
         });
 
-        // Professional touch: Add loading animation
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            
+            // In a real application, you would send this data to a server
+            // For demo purposes, we'll just show an alert
+            alert(`Thank you ${name}! Your message regarding "${subject}" has been received. We'll contact you at ${email} shortly.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Add scroll animations (simple version)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.delivery-card, .menu-item, .partner-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
         });
     </script>
 </body>
