@@ -19,24 +19,22 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            color: #2c2c2c;
+            color: #2d2d2d;
             line-height: 1.6;
-            background-color: #fefefe;
-            overflow-x: hidden;
+            background-color: #f8f7f4;
         }
 
-        /* Navigation */
+        /* Navigation - Original colors */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.98));
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
             z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
-            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.2);
         }
 
         .nav-container {
@@ -50,10 +48,11 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 3px;
+            position: relative;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -61,26 +60,26 @@
 
         .logo-icon {
             color: #8b7355;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 3rem;
             list-style: none;
         }
 
         .nav-links a {
             font-family: 'Montserrat', sans-serif;
-            color: #444;
+            color: #d4d4d4;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 400;
             position: relative;
-            padding: 0.5rem 0;
+            padding-bottom: 5px;
         }
 
         .nav-links a::after {
@@ -89,7 +88,7 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 2px;
+            height: 1px;
             background: #8b7355;
             transition: width 0.3s;
         }
@@ -105,7 +104,7 @@
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 4px;
+            gap: 5px;
             cursor: pointer;
             background: transparent;
             border: none;
@@ -114,23 +113,33 @@
         .menu-toggle span {
             width: 25px;
             height: 2px;
-            background: #1a1a1a;
+            background: #fff;
             transition: 0.3s;
         }
 
-        /* Hero Section */
+        /* Hero Section - Original colors */
         .hero {
             height: 100vh;
-            min-height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             overflow: hidden;
             width: 100%;
             margin: 0;
             padding: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover;
+            opacity: 0.25;
         }
 
         .hero-content {
@@ -146,51 +155,50 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-weight: 400;
+            letter-spacing: 3px;
             line-height: 1.1;
         }
 
         .hero-subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             color: #d4d4d4;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .hero-tagline {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             max-width: 600px;
-            margin: 0 auto 2.5rem;
-            font-weight: 300;
+            margin: 0 auto 3rem;
+            font-weight: 400;
             opacity: 0.9;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
             font-family: 'Montserrat', sans-serif;
-            padding: 0.9rem 2rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            border-radius: 3px;
+            border-radius: 2px;
             font-size: 0.95rem;
             transition: all 0.3s;
             letter-spacing: 1px;
             cursor: pointer;
             border: none;
-            font-weight: 600;
+            font-weight: 500;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -203,15 +211,14 @@
         }
 
         .btn-primary:hover {
-            background: #735c40;
+            background: #6d5a44;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
             color: #fff;
-            border: 2px solid #fff;
+            border: 1px solid #fff;
         }
 
         .btn-secondary:hover {
@@ -219,9 +226,9 @@
             transform: translateY(-2px);
         }
 
-        /* Section Styles - Reduced Spacing */
+        /* Section Styles - Original background */
         section {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -229,141 +236,129 @@
         .section-title {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
             color: #1a1a1a;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-weight: 500;
+            letter-spacing: 2px;
         }
 
         .section-subtitle {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-            font-size: 1rem;
+            color: #6a6a6a;
+            margin-bottom: 3.5rem;
+            font-size: 1.1rem;
             font-weight: 400;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* Delivery Section */
+        /* Delivery Section - Original card styling */
         .delivery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
         }
 
         .delivery-card {
             background: #fff;
             padding: 2.5rem 2rem;
             text-align: center;
-            border-radius: 5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 3px solid #8b7355;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
         }
 
         .delivery-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
         .delivery-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             margin: 0 auto 1.5rem;
-            background: #f8f6f3;
+            background: #f5f3f0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #8b7355;
         }
 
         .delivery-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #1a1a1a;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .delivery-card p {
             font-family: 'Montserrat', sans-serif;
-            color: #666;
-            line-height: 1.7;
+            color: #6a6a6a;
+            line-height: 1.8;
             font-weight: 400;
-            font-size: 0.95rem;
         }
 
         .delivery-cta {
-            background: linear-gradient(135deg, #8b7355 0%, #6d5a44 100%);
+            background: #8b7355;
             color: #fff;
             padding: 3rem;
             text-align: center;
-            border-radius: 5px;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .delivery-cta h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .delivery-cta p {
             font-family: 'Montserrat', sans-serif;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
             font-weight: 400;
-            font-size: 1.05rem;
         }
 
-        /* Menu Section */
+        /* Menu Section - Original styling */
         .menu-category {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .category-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
             color: #8b7355;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 1px solid #e0e0e0;
             padding-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .menu-items {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .menu-item {
             background: #fff;
             padding: 0;
-            border-radius: 5px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 20px rgba(0,0,0,0.05);
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
         }
 
         .menu-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
 
         .menu-item-image {
             width: 100%;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
         }
 
@@ -375,14 +370,11 @@
         }
 
         .menu-item:hover .menu-item-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .menu-item-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 2rem;
         }
 
         .menu-item-header {
@@ -394,30 +386,29 @@
 
         .menu-item h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #1a1a1a;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .menu-item .price {
             font-family: 'Montserrat', sans-serif;
             color: #8b7355;
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 600;
             white-space: nowrap;
             margin-left: 1rem;
         }
 
         .menu-item p {
             font-family: 'Montserrat', sans-serif;
-            color: #666;
-            font-size: 0.9rem;
+            color: #6a6a6a;
+            font-size: 0.95rem;
             line-height: 1.7;
             font-weight: 400;
-            margin-top: auto;
         }
 
-        /* Contact Form Section */
+        /* Contact Section - NEW with form */
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -428,8 +419,7 @@
         .contact-info {
             background: #fff;
             padding: 2.5rem;
-            border-radius: 5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
         }
 
         .contact-item {
@@ -441,12 +431,12 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: #f8f6f3;
+            background: #f5f3f0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #8b7355;
             margin-right: 1.5rem;
             flex-shrink: 0;
@@ -457,12 +447,12 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: #1a1a1a;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .contact-item p {
             font-family: 'Montserrat', sans-serif;
-            color: #666;
+            color: #6a6a6a;
             font-size: 0.95rem;
             font-weight: 400;
         }
@@ -470,8 +460,15 @@
         .contact-form {
             background: #fff;
             padding: 2.5rem;
-            border-radius: 5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+        }
+
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            font-weight: 500;
         }
 
         .form-group {
@@ -490,16 +487,18 @@
         .form-control {
             width: 100%;
             padding: 0.9rem;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
             transition: border 0.3s;
+            background: #fcfcfc;
         }
 
         .form-control:focus {
             outline: none;
             border-color: #8b7355;
+            background: #fff;
         }
 
         textarea.form-control {
@@ -511,30 +510,35 @@
             background: #8b7355;
             color: #fff;
             border: none;
-            padding: 0.9rem 2rem;
+            padding: 1rem 2rem;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            border-radius: 3px;
+            font-weight: 500;
+            border-radius: 2px;
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .form-submit:hover {
-            background: #735c40;
+            background: #6d5a44;
             transform: translateY(-2px);
         }
 
         .social-links {
             display: flex;
-            gap: 0.8rem;
+            gap: 1rem;
             margin-top: 2rem;
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: #8b7355;
             border-radius: 50%;
             display: flex;
@@ -542,129 +546,97 @@
             justify-content: center;
             color: #fff;
             text-decoration: none;
-            font-size: 1rem;
-            transition: background 0.3s, transform 0.3s;
+            font-size: 1.2rem;
+            transition: background 0.3s;
         }
 
         .social-link:hover {
-            background: #735c40;
-            transform: translateY(-3px);
+            background: #6d5a44;
         }
 
         /* Partners Section */
         .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
             margin-bottom: 3rem;
         }
 
         .partner-card {
             background: #fff;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
-            border-radius: 5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid #f0f0f0;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
         }
 
         .partner-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-color: #8b7355;
         }
 
         .partner-icon {
             font-size: 2.5rem;
             color: #8b7355;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .partner-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: #1a1a1a;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .partner-card p {
             font-family: 'Montserrat', sans-serif;
-            color: #666;
-            line-height: 1.7;
+            color: #6a6a6a;
+            line-height: 1.8;
             font-weight: 400;
-            font-size: 0.9rem;
         }
 
-        /* Footer */
+        /* Footer - Original colors */
         footer {
             background: #1a1a1a;
             color: #fff;
-            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+            padding: 3rem 2rem;
             margin-top: 4rem;
         }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h4 {
+        footer h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
-            color: #fff;
-            font-weight: 600;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 2px;
         }
 
-        .footer-column p, .footer-column a {
+        footer p {
             font-family: 'Montserrat', sans-serif;
-            color: #aaa;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            margin-bottom: 0.8rem;
-            display: block;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: #8b7355;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #333;
-            font-family: 'Montserrat', sans-serif;
-            color: #888;
-            font-size: 0.85rem;
+            color: #9a9a9a;
+            margin-top: 1rem;
+            font-weight: 400;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 90px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
+                height: calc(100vh - 90px);
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(20px);
                 flex-direction: column;
                 align-items: center;
-                padding: 2rem 0;
+                padding: 3rem 0;
                 transition: left 0.3s;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             }
 
             .nav-links a {
-                color: #444;
+                color: #d4d4d4;
                 font-size: 1rem;
             }
 
@@ -677,34 +649,30 @@
             }
 
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-tagline {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             section {
-                padding: 3rem 1.5rem;
+                padding: 4rem 1.5rem;
             }
 
             .cta-buttons {
                 flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
+                align-items: center;
             }
 
             .btn {
                 width: 100%;
+                max-width: 300px;
+                text-align: center;
             }
             
             .hero-content {
@@ -712,21 +680,21 @@
             }
             
             .delivery-cta {
-                padding: 2rem 1.5rem;
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
             }
         }
         
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .hero-tagline {
                 font-size: 0.95rem;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -757,9 +725,9 @@
     <!-- Hero Section -->
     <div class="hero" id="home">
         <div class="hero-content">
-            <h1>Classic Restaurant</h1>
-            <p class="hero-subtitle">24/7 Fine Dining & Delivery</p>
-            <p class="hero-tagline">Kigali's premier culinary destination offering round-the-clock gourmet experiences. Dine in elegance or enjoy premium no-contact delivery anytime.</p>
+            <h1>CLASSIC</h1>
+            <p class="hero-subtitle">Restaurant & 24-Hour Delivery</p>
+            <p class="hero-tagline">Kigali's premier 24-hour fine dining experience. Enjoy exquisite flavors with round-the-clock dine-in and no-contact delivery. Your culinary destination never closes.</p>
             <div class="cta-buttons">
                 <a href="#menu" class="btn btn-primary">
                     <i class="fas fa-book-open"></i> View Menu
@@ -773,42 +741,42 @@
 
     <!-- Delivery Section -->
     <section id="delivery">
-        <h2 class="section-title">24/7 Delivery Service</h2>
-        <p class="section-subtitle">Premium cuisine delivered anytime, with real-time tracking and contactless delivery options</p>
+        <h2 class="section-title">24-Hour Delivery Service</h2>
+        <p class="section-subtitle">Premium cuisine delivered anytime, day or night with real-time tracking</p>
         
         <div class="delivery-grid">
             <div class="delivery-card">
                 <div class="delivery-icon">
                     <i class="fas fa-clock"></i>
                 </div>
-                <h3>Always Available</h3>
-                <p>Round-the-clock service for breakfast, lunch, dinner, and late-night cravings. We never close.</p>
+                <h3>24/7 Availability</h3>
+                <p>Round-the-clock delivery service. Satisfy your cravings anytime - breakfast, lunch, dinner, or late-night dining.</p>
             </div>
             <div class="delivery-card">
                 <div class="delivery-icon">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <h3>Live Tracking</h3>
-                <p>Track your order in real-time from our kitchen to your doorstep. Complete transparency.</p>
+                <h3>Real-Time Tracking</h3>
+                <p>Track your order from our kitchen to your doorstep. Live updates and estimated delivery times for complete peace of mind.</p>
             </div>
             <div class="delivery-card">
                 <div class="delivery-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3>Contactless Delivery</h3>
-                <p>Optional no-contact delivery with secure packaging. Your safety is our priority.</p>
+                <h3>No-Contact Delivery</h3>
+                <p>Safety-first service with optional no-contact delivery. Your meal arrives hot, fresh, and securely packaged.</p>
             </div>
         </div>
 
         <div class="delivery-cta">
-            <h3>Ready to Order?</h3>
-            <p>Available 24/7 through direct ordering or delivery platforms</p>
+            <h3>Order Anytime, Day or Night</h3>
+            <p>Available 24 hours daily • Live order tracking • Direct delivery or through VubaVuba</p>
             <div class="cta-buttons">
                 <a href="tel:+250783726151" class="btn btn-secondary">
                     <i class="fas fa-phone"></i> +250 783 726 151
                 </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-comment"></i> Online Order
+                <a href="https://wa.me/250783726151" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Order
                 </a>
             </div>
         </div>
@@ -817,7 +785,7 @@
     <!-- Menu Section -->
     <section id="menu">
         <h2 class="section-title">Signature Menu</h2>
-        <p class="section-subtitle">Culinary excellence crafted by our executive chefs, available 24/7</p>
+        <p class="section-subtitle">Culinary excellence available 24 hours daily</p>
 
         <div class="menu-category">
             <h3 class="category-title">Chef's Specialties</h3>
@@ -886,8 +854,8 @@
                 <div class="partner-icon">
                     <i class="fas fa-globe"></i>
                 </div>
-                <h3>Website Orders</h3>
-                <p>Place orders directly through our website with live tracking and order management.</p>
+                <h3>Premium Experience</h3>
+                <p>Whether ordering directly or through partners, receive the same restaurant-quality dining experience.</p>
             </div>
         </div>
     </section>
@@ -945,14 +913,11 @@
                     <a href="#" class="social-link">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
                 </div>
             </div>
             
             <div class="contact-form">
-                <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; color: #1a1a1a;">Send Us a Message</h3>
+                <h3>Send Us a Message</h3>
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -991,30 +956,14 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h4>Classic Restaurant</h4>
-                <p>Kigali's premier 24-hour fine dining destination offering gourmet cuisine with round-the-clock delivery service.</p>
-                <p><i class="fas fa-star" style="color: #8b7355; margin-right: 5px;"></i> Featured Restaurant in Kigali</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
-                <a href="#menu"><i class="fas fa-chevron-right"></i> Menu</a>
-                <a href="#delivery"><i class="fas fa-chevron-right"></i> 24/7 Delivery</a>
-                <a href="#partners"><i class="fas fa-chevron-right"></i> Delivery Partners</a>
-            </div>
-            <div class="footer-column">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-map-marker-alt"></i> 160 KK 31 Ave, Kigali</p>
-                <p><i class="fas fa-phone-alt"></i> +250 783 726 151</p>
-                <p><i class="fas fa-clock"></i> Open 24 Hours Daily</p>
-                <p><i class="fas fa-truck"></i> Also on VubaVuba</p>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2025 Classic Restaurant & Delivery. All rights reserved. | Premium 24/7 Dining Experience
-        </div>
+        <h3>CLASSIC RESTAURANT & DELIVERY</h3>
+        <p>Kigali's 24-Hour Fine Dining Experience</p>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">
+            <strong>Featured Restaurant:</strong> Classic Restaurant and Delivery • 160 KK 31 Ave, Kigali<br>
+            Open 24 hours • Dine-in & No-contact Delivery • +250 783 726 151<br>
+            Also available on VubaVuba and other local delivery platforms
+        </p>
+        <p style="margin-top: 1rem;">© 2025 Classic Restaurant. All rights reserved.</p>
     </footer>
 
     <script>
@@ -1065,12 +1014,10 @@
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.padding = '0.7rem 0';
-                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.12)';
             } else {
-                nav.style.padding = '1rem 0';
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+                nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
             }
         });
 
@@ -1083,16 +1030,23 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
             
             // In a real application, you would send this data to a server
             // For demo purposes, we'll just show an alert
-            alert(`Thank you ${name}! Your message regarding "${subject}" has been received. We'll contact you at ${email} shortly.`);
+            alert(`Thank you ${name}! Your ${subject} inquiry has been received. We'll contact you at ${email} shortly.`);
             
             // Reset form
             contactForm.reset();
         });
 
-        // Add scroll animations (simple version)
+        // Simple animation for cards on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
