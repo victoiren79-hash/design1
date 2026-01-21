@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Restaurant & Delivery - Premium Dining in Kigali</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -12,7 +17,7 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: #2d2d2d;
             line-height: 1.6;
             background-color: #f8f7f4;
@@ -29,7 +34,6 @@
             z-index: 1000;
             padding: 1.5rem 0;
             border-bottom: 1px solid rgba(139, 115, 85, 0.2);
-          
         }
 
         .nav-container {
@@ -42,10 +46,11 @@
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: 300;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
             color: #fff;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             position: relative;
         }
 
@@ -66,13 +71,14 @@
         }
 
         .nav-links a {
+            font-family: 'Inter', sans-serif;
             color: #d4d4d4;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-weight: 300;
+            font-weight: 400;
             position: relative;
             padding-bottom: 5px;
         }
@@ -110,7 +116,7 @@
             transition: 0.3s;
         }
 
-        /* Hero Section */
+        /* Hero Section - Updated to fill gaps */
         .hero {
             height: 100vh;
             display: flex;
@@ -120,6 +126,7 @@
             margin-top: 20px;
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             overflow: hidden;
+            padding: 0; /* Remove padding */
         }
 
         .hero::before {
@@ -138,22 +145,36 @@
             text-align: center;
             color: #fff;
             padding: 2rem;
-            max-width: 800px;
+            max-width: 1200px; /* Match the container width */
+            width: 100%;
+            margin: 0 auto; /* Center the content */
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
             margin-bottom: 1rem;
-            font-weight: 300;
-            letter-spacing: 3px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            line-height: 1.1;
         }
 
         .hero p {
+            font-family: 'Inter', sans-serif;
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
             color: #d4d4d4;
             font-weight: 300;
             letter-spacing: 1px;
+        }
+
+        .hero-content p:last-of-type {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-weight: 400;
+            opacity: 0.9;
         }
 
         .cta-buttons {
@@ -164,6 +185,7 @@
         }
 
         .btn {
+            font-family: 'Inter', sans-serif;
             padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 2px;
@@ -172,6 +194,7 @@
             letter-spacing: 1px;
             cursor: pointer;
             border: none;
+            font-weight: 500;
         }
 
         .btn-primary {
@@ -202,20 +225,22 @@
         }
 
         .section-title {
+            font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             color: #1a1a1a;
-            font-weight: 300;
+            font-weight: 500;
             letter-spacing: 2px;
         }
 
         .section-subtitle {
+            font-family: 'Inter', sans-serif;
             text-align: center;
             color: #6a6a6a;
             margin-bottom: 4rem;
             font-size: 1.1rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* Delivery Section */
@@ -251,15 +276,18 @@
         }
 
         .delivery-card h3 {
-            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
             color: #1a1a1a;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .delivery-card p {
+            font-family: 'Inter', sans-serif;
             color: #6a6a6a;
             line-height: 1.8;
+            font-weight: 400;
         }
 
         .delivery-cta {
@@ -271,14 +299,17 @@
         }
 
         .delivery-cta h3 {
-            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .delivery-cta p {
+            font-family: 'Inter', sans-serif;
             margin-bottom: 2rem;
             opacity: 0.9;
+            font-weight: 400;
         }
 
         /* Menu Section */
@@ -287,12 +318,13 @@
         }
 
         .category-title {
-            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
             margin-bottom: 2rem;
             color: #8b7355;
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 0.5rem;
-            font-weight: 300;
+            font-weight: 500;
         }
 
         .menu-items {
@@ -343,23 +375,27 @@
         }
 
         .menu-item h4 {
-            font-size: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
             color: #1a1a1a;
             font-weight: 500;
         }
 
         .menu-item .price {
+            font-family: 'Inter', sans-serif;
             color: #8b7355;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             white-space: nowrap;
             margin-left: 1rem;
         }
 
         .menu-item p {
+            font-family: 'Inter', sans-serif;
             color: #6a6a6a;
             font-size: 0.95rem;
             line-height: 1.7;
+            font-weight: 400;
         }
 
         /* Gallery */
@@ -398,6 +434,7 @@
             font-size: 1.2rem;
             opacity: 0;
             transition: opacity 0.3s;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .gallery-item:hover .gallery-overlay {
@@ -429,14 +466,17 @@
         }
 
         .reservation-info h3 {
-            font-size: 1.3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: #1a1a1a;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .reservation-info p {
+            font-family: 'Inter', sans-serif;
             color: #6a6a6a;
+            font-weight: 400;
         }
 
         /* Contact */
@@ -472,15 +512,18 @@
         }
 
         .contact-item h4 {
-            font-size: 1.1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: #1a1a1a;
             font-weight: 500;
         }
 
         .contact-item p {
+            font-family: 'Inter', sans-serif;
             color: #6a6a6a;
             font-size: 0.95rem;
+            font-weight: 400;
         }
 
         .social-links {
@@ -501,6 +544,7 @@
             text-decoration: none;
             font-size: 1.3rem;
             transition: background 0.3s;
+            font-family: 'Inter', sans-serif;
         }
 
         .social-link:hover {
@@ -516,6 +560,7 @@
             justify-content: center;
             color: #fff;
             font-size: 3rem;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         /* Footer */
@@ -527,15 +572,18 @@
         }
 
         footer h3 {
-            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-weight: 500;
+            letter-spacing: 2px;
         }
 
         footer p {
+            font-family: 'Inter', sans-serif;
             color: #9a9a9a;
             margin-top: 1rem;
+            font-weight: 400;
         }
 
         /* Responsive */
@@ -567,7 +615,8 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
+                letter-spacing: 3px;
             }
 
             .hero p {
@@ -575,7 +624,7 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             section {
@@ -589,6 +638,20 @@
             .btn {
                 width: 100%;
                 text-align: center;
+            }
+            
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p:last-of-type {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -619,7 +682,7 @@
         <div class="hero-content">
             <h1>CLASSIC</h1>
             <p>Restaurant & Delivery</p>
-            <p style="font-size: 1rem; margin-bottom: 3rem;">Experience fine dining in the heart of Kigali. Fresh ingredients, exquisite flavors, memorable moments.</p>
+            <p>Experience fine dining in the heart of Kigali. Fresh ingredients, exquisite flavors, memorable moments.</p>
             <div class="cta-buttons">
                 <a href="#menu" class="btn btn-primary">View Menu</a>
                 <a href="#delivery" class="btn btn-secondary">Order Delivery</a>
@@ -892,14 +955,21 @@
                     </div>
                 </div>
                 <div class="contact-item">
-
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>reservations@classic.rw</p>
+                    </div>
+                </div>
                 <div class="social-links">
                     <a href="#" class="social-link">f</a>
                     <a href="#" class="social-link">📷</a>
                     <a href="#" class="social-link">🐦</a>
                 </div>
             </div>
-            
+            <div class="map-placeholder">
+                MAP
+            </div>
         </div>
     </section>
 
