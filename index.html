@@ -116,20 +116,17 @@
             transition: 0.3s;
         }
 
-        /* Hero Section - UPDATED TO BE FULL WIDTH */
+        /* Hero Section - COMPLETELY FULL WIDTH */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            margin-top: 0;
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             overflow: hidden;
-            width: 100vw; /* Full viewport width */
-            margin-left: calc(-50vw + 50%); /* Center alignment fix */
-            left: 0;
-            right: 0;
+            width: 100%;
+            margin: 0;
             padding: 0;
         }
 
@@ -152,6 +149,7 @@
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -223,7 +221,7 @@
 
         /* Section Styles */
         section {
-            padding: 0;
+            padding: 6rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -632,7 +630,7 @@
             }
 
             section {
-                padding: 0;
+                padding: 4rem 1.5rem;
             }
 
             .cta-buttons {
@@ -681,8 +679,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Hero Section - NOT wrapped in section tag anymore -->
+    <div class="hero" id="home">
         <div class="hero-content">
             <h1>CLASSIC</h1>
             <p>Restaurant & Delivery</p>
@@ -692,7 +690,7 @@
                 <a href="#delivery" class="btn btn-secondary">Order Delivery</a>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Delivery Section -->
     <section id="delivery">
@@ -1026,5 +1024,3 @@
     </script>
 </body>
 </html>
-
-
